@@ -1,0 +1,275 @@
+:root {
+	--dark-primary-color    :#00796B; 
+	--default-primary-color :#009688; 
+	--light-primary-color   :#B2DFDB; 
+	--text-primary-color    :#FFFFFF; 
+	--accent-color          :#FFEB3B; 
+	--primary-text-color    :#212121; 
+	--secondary-text-color  :#757575; 
+	--divider-color         :#BDBDBD; 
+}
+body{
+	font-family: 'Space Mono', monospace;
+	font-size: 20px;
+	margin: 0;	
+	/*padding-bottom: 50px;*/
+	max-width: 100%;
+	overflow-x: hidden;
+	color: var(--secondary-text-color);
+}
+button{	
+	font-family: 'Space Mono', monospace;
+	line-height: 30px;
+}
+
+/*------------------------------------*\
+  #HEADER
+\*------------------------------------*/
+.header{
+	background-color: var(--default-primary-color);
+	height: 40vh;	
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;	
+	display: flex;
+	align-items: flex-end;
+}
+.header img{
+	padding-bottom: 15%;
+	/*width: .1fr;*/
+	width: 30%;
+}
+
+/*------------------------------------*\
+  #CONTENT
+\*------------------------------------*/
+
+/*BUTTON*/
+.btnContainer{	
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 15vh;		
+	transform: translateY(-8vh);
+}
+.btn-start{
+	position: absolute;
+	width: 70%;
+	height: 80px;
+	max-height: 200px;
+	max-width: 600px;
+	background-color: var(--accent-color);
+	border: 3px solid black;
+	font-size: 1.3em;
+	box-shadow: -8px 8px rgba(0,0,0,.3);	
+}
+.btn-front{
+	 transform:rotate(-5deg) ;	
+}
+.btn-back{
+	 
+}
+
+/*DESCRIPTION*/
+.description{
+	padding: 0 10% 0 10%;
+}
+.text p:first-child{
+	padding-top: 0;
+}
+
+/*STADISTICS*/
+.stadistics{
+	display: grid;
+	grid-template-columns: minmax(200px,500px) ;
+	height: auto;
+	grid-gap: 10px;
+	width: 100%;
+	align-items: center;
+	justify-content: center;
+}
+.item{
+	min-height:  100px;
+	width: 100%;		
+	display: flex;
+	justify-content: center;
+}
+.item img{
+	border: 1px solid black;
+	width: 100%;
+	height: 100%;
+	box-shadow: 3px 3px;
+}
+.staText{
+	font-size: .7em;
+	width: 80%;
+}
+/*------------------------------------*\
+  #FOOTER
+\*------------------------------------*/
+.footer{
+	background: black;
+	min-height: 8vh;
+}
+
+/*------------------------------------*\
+  #MENU
+\*------------------------------------*/
+.menuContainer{	
+	display: flex;
+	position: fixed;
+	top: 92%;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	height: 8vh;
+	width: 100%;	
+	background-color: rgba(0,0,0,.8);	
+	align-items: center;
+}
+
+/*MENU ICON*/
+.menuIcon{
+}
+.menuIcon img{
+	position: absolute;
+	height: 6vh;
+	right: 5vw;	
+	bottom: 1vh;
+}
+
+/*IMAGE LOGO*/
+.logoImg{
+	display: flex;
+	align-items:center;
+}
+.logoImg img{	
+	position: absolute;
+	height:8vh;
+	transform: translateX(40vw) translateY(-75vh) scale(3);
+	animation-duration: .5s;
+	animation-fill-mode: forwards;
+}
+.logoImg{
+	img{
+		border: 10px solid red;
+	}
+}
+.animLogoImgDown{
+	animation-name: logoImgDown;
+}
+.animLogoImgUp{
+	animation-name: logoImgUp;
+}
+
+/*TEXT LOGO*/
+.logoContainer{
+	display: flex;
+	align-items:center;
+}
+.menuContainer .logoContainer img{
+	/*overflow: hidden;*/
+	position: absolute;
+	left: 20%;
+	width: 40%;
+	transform-origin: 0% 50%;		
+	transform:translateX(-20%) translateY(-90vh) scale(2);
+
+}
+.animLogoDown{
+	animation-name: logoDown;
+	animation-duration: .5s;
+	animation-fill-mode: forwards;
+}
+.animLogoUp{
+	animation-name: logoUp;
+	animation-duration: .5s;
+	animation-fill-mode: forwards;
+}
+.animLogoLeft{
+	animation-name: logoLeft;	
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+}
+.animLogoRight{
+	animation-name: logoRight;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+}
+
+/*TEXT CONTACT*/
+.textContact{
+	font-size: .8em;
+	font-family: Verdana, Geneva, sans-serif;
+	color: white;
+	text-align: center;
+	padding-left: 10vh;
+	transform-origin: -50% 50%;	
+	transform:rotateY(180deg);
+}
+/*IMAGE LOGO ANIMATION*/
+ @keyframes logoImgDown{
+	0%{
+		transform: translateX(40vw) translateY(-75vh) scale(3);
+	}
+	100%{
+		transform:scale(1);	
+	}
+ }
+ @keyframes logoImgUp{
+ 	0%{
+ 		transform: scale(1);		
+ 	}
+ 	100%{
+ 		transform: translateX(40vw) translateY(-75vh) scale(3);
+ 	}
+ }
+
+ /*TEXT LOGO ANIMATION*/
+@keyframes logoDown{
+	0%{
+		transform:translateX(-20%) translateY(-90vh) scale(2);
+	}
+	100%{
+		transform:scale(1);
+	}
+}
+@keyframes logoUp{
+	0%{
+		transform:scale(1);		
+	}
+	100%{
+
+		transform:translateX(-20%) translateY(-90vh) scale(2);
+	}
+}
+@keyframes logoLeft{
+	0%{		
+		transform:translateY(0);
+	}
+	100%{
+		transform-origin: -50% 50%;
+		transform:rotateY(180deg);
+	}
+}
+@keyframes logoRight{
+	0%{	
+		transform-origin: -50% 50%;	
+		transform:rotateY(180deg);
+	}
+	100%{		
+		transform-origin: -50% 50%;	
+		transform:rotateY(0);		
+	}
+}
+
+
+/*------------------------------------*\
+  #MENU UNFOLDED
+\*------------------------------------*/
+
+
+
+
+
